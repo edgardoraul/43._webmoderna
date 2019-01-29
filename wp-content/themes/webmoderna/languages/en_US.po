@@ -1,0 +1,190 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Los Altos del Sol\n"
+"POT-Creation-Date: 2015-03-08 16:17-0300\n"
+"PO-Revision-Date: 2015-03-08 16:17-0300\n"
+"Last-Translator: Edgardo Raúl Galletto | WebModerna <info@webmoderna.com."
+"ar>\n"
+"Language-Team: WebModerna <info@webmoderna.com.ar>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-KeywordsList: _x;_e;__\n"
+"X-Poedit-Basepath: F:\\wamp\\www\\54._losaltosdelsol\\wp-content\\themes\\\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SearchPath-0: losaltosdelsol\n"
+
+#: losaltosdelsol/404.php:11
+msgid ""
+"Noooo! Error 404!! Qué quisiste hacer? Vete a una página de las que figura "
+"en el menú de arriba, por favor!"
+msgstr ""
+"Noooo! Error 404! What that hell are you doing? Please! Make click in any "
+"item of main menu up here! And do it right this time, ok?"
+
+#: losaltosdelsol/footer.php:3
+msgid "Todos los derechos reservados"
+msgstr "All rights reserved"
+
+#: losaltosdelsol/footer.php:60
+msgid "Desarrollado por "
+msgstr "Powered by"
+
+#: losaltosdelsol/footer.php:64 losaltosdelsol/footer.php:65
+#: losaltosdelsol/footer.php:68 losaltosdelsol/footer.php:69
+msgid "Ir arriba"
+msgstr "Go to top"
+
+#: losaltosdelsol/functions.php:192
+msgid "Desarrollado por"
+msgstr "Powered by"
+
+#: losaltosdelsol/functions.php:192
+msgid "...:: WebModerna | el futuro de la web ::..."
+msgstr "...:: WebModerna | the web's future  ::..."
+
+#: losaltosdelsol/functions.php:269
+msgid "Menú Principal"
+msgstr "Main Menu"
+
+#: losaltosdelsol/functions.php:315
+msgid "Subir las fotos desde aquí"
+msgstr "Upload your images from here"
+
+#: losaltosdelsol/functions.php:335
+msgid "IMPORTANTE!!: Las imágenes deben ser mínimo de 2600px de ancho."
+msgstr "Important!! The image's size must be: width >= 2600px; at less."
+
+#: losaltosdelsol/functions.php:369 losaltosdelsol/functions.php:384
+msgid "Arrastrar y soltar. Mover arriba o abajo."
+msgstr "Drag and drop. Move up and down."
+
+#: losaltosdelsol/functions.php:375 losaltosdelsol/functions.php:387
+msgid "Seleccionar imagen"
+msgstr "Select image"
+
+#: losaltosdelsol/functions.php:377 losaltosdelsol/functions.php:388
+msgid "Eliminar imagen"
+msgstr "Delete image"
+
+#: losaltosdelsol/functions.php:378 losaltosdelsol/functions.php:389
+msgid "Quitar fila"
+msgstr "Delete row"
+
+#: losaltosdelsol/functions.php:394
+msgid " Agregar Imagen"
+msgstr " Add image"
+
+#: losaltosdelsol/functions.php:436
+msgid "Página"
+msgstr "Page"
+
+#: losaltosdelsol/functions.php:437
+msgid "de"
+msgstr "of"
+
+#: losaltosdelsol/functions.php:490
+msgid "¡Sal de mi jardín! ¡AHORA MISMO!"
+msgstr "Get out of here! Now!!"
+
+#: losaltosdelsol/functions.php:588
+msgid "Descripción"
+msgstr "Description"
+
+#: losaltosdelsol/functions.php:607
+msgid ""
+"Escribí una pequeña descripción de lo que trata esta página en concreto."
+msgstr "Write a little description about of the content of this page."
+
+#: losaltosdelsol/functions.php:659
+msgid "Contenidos del pie de página"
+msgstr "Contents of footer"
+
+#: losaltosdelsol/functions.php:660 losaltosdelsol/functions.php:661
+msgid "Pie de página"
+msgstr "Footer"
+
+#: losaltosdelsol/functions.php:662
+msgid "Item superior"
+msgstr "Parent item"
+
+#: losaltosdelsol/functions.php:663
+msgid "Todos los items"
+msgstr "All items"
+
+#: losaltosdelsol/functions.php:664
+msgid "Ver item"
+msgstr "View item"
+
+#: losaltosdelsol/functions.php:665
+msgid "Agregar nuevo item"
+msgstr "Add new item"
+
+#: losaltosdelsol/functions.php:666
+msgid "Agregar nuevo"
+msgstr "Add new"
+
+#: losaltosdelsol/functions.php:667
+msgid "Editar item"
+msgstr "Edit item"
+
+#: losaltosdelsol/functions.php:668
+msgid "Actualizar item"
+msgstr "Update item"
+
+#: losaltosdelsol/functions.php:669
+msgid "Buscar item"
+msgstr "Search item"
+
+#: losaltosdelsol/functions.php:670
+msgid "No hay items"
+msgstr "No items"
+
+#: losaltosdelsol/functions.php:671
+msgid "No hay items en la papelera"
+msgstr "No items in trash"
+
+#: losaltosdelsol/functions.php:674
+msgid "Contenido que va al pie de página"
+msgstr "Content inside of footer"
+
+#: losaltosdelsol/functions.php:675
+msgid "Contenido que se puede agregar en el pie de página"
+msgstr "You can add a content at footer"
+
+#: losaltosdelsol/header.php:23
+msgid "Error 404"
+msgstr "Error 404"
+
+#: losaltosdelsol/header.php:91
+msgid "Menú"
+msgstr "Menu"
+
+#: losaltosdelsol/page.php:24 losaltosdelsol/page.php:33
+msgid "Sin imagen"
+msgstr "No image"
+
+#~ msgid "Los Altos del Sol "
+#~ msgstr "Altos del Sol Resort"
+
+#, fuzzy
+#~ msgid "Pie de páginaa"
+#~ msgstr "Footer"
+
+#, fuzzy
+#~ msgid "Contenidos del pie de páginasdfgsfdgsdfs"
+#~ msgstr "Content of footer"
+
+#, fuzzy
+#~ msgid "Pie de páginaasdfadadfadf"
+#~ msgstr "Footer"
+
+#, fuzzy
+#~ msgid "Contenidosdfgdgdfgdfg del pie de página"
+#~ msgstr "Content of footer"
+
+#~ msgid "post_type_pie_pagina"
+#~ msgstr "post_type_pie_pagina"
