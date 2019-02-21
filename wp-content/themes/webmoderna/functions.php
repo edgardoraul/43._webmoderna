@@ -536,7 +536,7 @@ function titulo_corto( $after = null, $length )
 	return $mytitle;
 }
 
-// Algo con respecto a las ssl seguro
+// Algo con respecto a las ssl seguro..
 define( 'PILAU_REQUEST_PROTOCOL', isset( $_SERVER[ 'HTTPS' ] ) ? 'https' : 'http' );
 
 ?>
