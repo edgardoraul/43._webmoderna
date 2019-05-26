@@ -150,13 +150,13 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 add_filter( 'emoji_svg_url', '__return_false' );
 
 // Remover la API REST
-function remove_api ()
+/*function remove_api ()
 {
 remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
 remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
 remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
 }
-add_action( 'after_setup_theme', 'remove_api' );
+add_action( 'after_setup_theme', 'remove_api' );*/
 
 // Remover cosas raras de Wordpress
 remove_action( 'wp_head', 'wp_resource_hints', 2 );
@@ -179,14 +179,14 @@ add_action('admin_head', 'admin_favicon', 1);
 
 
 // Deshabilitar el mensaje de actualización del WordPress
-add_action( 'admin_head', 'ocultar_aviso_actualizacion', 1 );
+/*add_action( 'admin_head', 'ocultar_aviso_actualizacion', 1 );
 function ocultar_aviso_actualizacion()
 {
 	if ( !current_user_can( 'update_core' ) )
 	{
 		remove_action( 'admin_notices', 'update_nag', 3 );
 	}
-}
+}*/
 
 
 // Agregar clases a los enlaces de los posts next y back
@@ -245,13 +245,13 @@ function my_deregister_scripts()
 add_action( 'wp_footer', 'my_deregister_scripts' );
 
 // Añadiendo cabeceras de seguridad
-function add_security_headers()
+/*function add_security_headers()
 {
 	header( 'X-Content-Type-Options: nosniff' );
 	header( 'X-Frame-Options: SAMEORIGIN' );
 	header( 'X-XSS-Protection: 1;mode=block' );
 }
-add_action( 'send_headers', 'add_security_headers' );
+add_action( 'send_headers', 'add_security_headers' );*/
 
 // Cambiar el logo del login y la url del mismo y el título
 function custom_login_logo()
@@ -537,6 +537,6 @@ function titulo_corto( $after = null, $length )
 }
 
 // Algo con respecto a las ssl seguro..
-define( 'PILAU_REQUEST_PROTOCOL', isset( $_SERVER[ 'HTTPS' ] ) ? 'https' : 'http' );
+// define( 'PILAU_REQUEST_PROTOCOL', isset( $_SERVER[ 'HTTPS' ] ) ? 'https' : 'http' );
 
 ?>
