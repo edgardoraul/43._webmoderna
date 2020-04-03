@@ -9,6 +9,7 @@
 
 // Variables a utilizar
 $google_plus_contact	=	of_get_option( 'google_plus_contact', '' );
+$skype					=	of_get_option( 'skype', '' );
 $facebook_contact		=	of_get_option( 'facebook_contact', '' );
 $twitter_contact		=	of_get_option( 'twitter_contact', '' );
 $linkedin_contact		=	of_get_option( 'linkedin_contact', '' );
@@ -22,13 +23,17 @@ $google_analitycs		=	of_get_option( 'google_analitycs', '');
 			<!-- Redes sociales -->
 			<div class="footer__redes_sociales">
 				<ul class="footer__redes_sociales__list">
-					<?php if ( $google_plus_contact )
+					<?php if ( $skype )
 					{
-						echo '<li class="footer__redes_sociales__list__item"><a target="_blank" class="icon-google-plus" href="//' . $google_plus_contact . '" title="Google+"></a></li>';
+						echo '<li class="footer__redes_sociales__list__item"><a target="_blank" class=" icon-phone" href="//' . $skype . '" title="Skype"></a></li>';
 					};
 					if ( $facebook_contact )
 					{
-						echo '<li class="footer__redes_sociales__list__item"><a target="_blank" class="icon-facebook" href="' . $facebook_contact . '" title="Facebook"></a></li>';
+						echo '<li class="footer__redes_sociales__list__item"><a target="_blank" class="icon-facebook" href="//' . $facebook_contact . '" title="Facebook"></a></li>';
+					};
+					if ( $linkedin_contact )
+					{
+						echo '<li class="footer__redes_sociales__list__item"><a target="_blank" class="icon-linkedin" href="//' . $linkedin_contact . '" title="LinkeIn"></a></li>';
 					};
 					if ( $twitter_contact )
 					{

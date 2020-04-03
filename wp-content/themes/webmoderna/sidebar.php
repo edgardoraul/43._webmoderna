@@ -69,7 +69,7 @@ $args = array (
 	'post_type'              => array( 'post' ),
 	'nopaging'               => false,
 	'orderby'                => 'rand',
-	'posts_per_page'		=> 4,
+	'posts_per_page'		 => 4,
 );
 
 // The Query

@@ -10,7 +10,7 @@
 // require_once "includes/22._perfil_usuario.php";
 
 // Login y Captcha
-require_once "includes/01._login.php";
+// require_once "includes/01._login.php";
 // require_once "includes/dm-confirm-email/dm-confirm-email.php";
 
 // Detección de móviles.
@@ -145,30 +145,32 @@ add_filter('tiny_mce_before_init', 'cambiar_opciones_mce');
 
 
 // Deshabilitar Iconos Emoji
+/*
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
 add_filter( 'emoji_svg_url', '__return_false' );
 
+
 // Remover la API REST
-/*function remove_api ()
+function remove_api ()
 {
-remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
-remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
-remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
+	remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
+	remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
+	remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
 }
-add_action( 'after_setup_theme', 'remove_api' );*/
+add_action( 'after_setup_theme', 'remove_api' );
 
 // Remover cosas raras de Wordpress
 remove_action( 'wp_head', 'wp_resource_hints', 2 );
 remove_action( 'wp_head', 'dns-prefetch' );
 
-/*// Remover los rel="wp-att de las imágenes"
-function my_remove_rel_attr($content) {
+// Remover los rel="wp-att de las imágenes"
+function my_remove_rel_attr($content)
+{
 	return preg_replace('/\s+rel="attachment wp-att-[0-9]+"/i', '', $content);
 }
 add_filter('the_content', 'my_remove_rel_attr');
 */
-
 
 // Agregando un favicon al área de administración
 function admin_favicon()
@@ -178,15 +180,17 @@ function admin_favicon()
 add_action('admin_head', 'admin_favicon', 1);
 
 
+/*
 // Deshabilitar el mensaje de actualización del WordPress
-/*add_action( 'admin_head', 'ocultar_aviso_actualizacion', 1 );
+add_action( 'admin_head', 'ocultar_aviso_actualizacion', 1 );
 function ocultar_aviso_actualizacion()
 {
 	if ( !current_user_can( 'update_core' ) )
 	{
 		remove_action( 'admin_notices', 'update_nag', 3 );
 	}
-}*/
+}
+*/
 
 
 // Agregar clases a los enlaces de los posts next y back
@@ -238,6 +242,8 @@ function remove_width_attribute( $html )
 };
 
 // Desactivar el script de embebidos
+
+/*
 function my_deregister_scripts()
 {
 	wp_deregister_script( 'wp-embed' );
@@ -245,7 +251,7 @@ function my_deregister_scripts()
 add_action( 'wp_footer', 'my_deregister_scripts' );
 
 // Añadiendo cabeceras de seguridad
-/*function add_security_headers()
+function add_security_headers()
 {
 	header( 'X-Content-Type-Options: nosniff' );
 	header( 'X-Frame-Options: SAMEORIGIN' );
@@ -262,7 +268,6 @@ function custom_login_logo()
 		{
 			background: #312720 !important;
 			height: 100% !important;
-			height: 100vw !important;
 		}
 		h1
 		{
@@ -312,6 +317,8 @@ add_filter( 'upload_mimes', 'cc_mime_types' );
 
 
 // Deshabilitar la edición desde otros programas, el link corto y la versión del WP.
+
+/*
 remove_action('wp_head', 'rsd_link');
 remove_action('wp_head', 'wp_generator');
 remove_action('wp_head', 'feed_links', 2);
@@ -326,7 +333,7 @@ remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 remove_action('wp_head', 'rel_canonical');
 
 // Renombramiento de la sección de Categorías y Etiquetas
-/*function revcon_change_post_label()
+function revcon_change_post_label()
 {
 	global $menu;
 	global $submenu;
@@ -382,30 +389,32 @@ function extra_contact_info($contactmethods)
 add_filter( 'user_contactmethods', 'extra_contact_info' );
 
 
+/*
 // Remover versión del WordPress
 function remove_wp_version() { return ''; };
 add_filter( 'the_generator', 'remove_wp_version' );
 
 
-/*// Eliminar el atributo rel="category tag".
+// Eliminar el atributo rel="category tag".
 function remove_category_list_rel($output)
 {
 	return str_replace( 'rel="category tag"', '', $output );
 };
 add_filter( 'wp_list_categories', 'remove_category_list_rel' );
 add_filter( 'the_category', 'remove_category_list_rel' );
-*/
+
 
 // Eliminar css y scripts de comentarios cuando no hagan falta
-/*function clean_header()
+
+function clean_header()
 {
 	wp_deregister_script( 'comment-reply' );
 };
-add_action( 'init', 'clean_header', 1 );*/
+add_action( 'init', 'clean_header', 1 );
 
 
 // Cargar scripts para comentarios solo en single.php
-/*function wd_single_scripts()
+function wd_single_scripts()
 {
 	if( is_singular() )
 	{
@@ -413,7 +422,8 @@ add_action( 'init', 'clean_header', 1 );*/
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action('wp_print_scripts', 'wd_single_scripts', 1);*/
+add_action('wp_print_scripts', 'wd_single_scripts', 1);
+*/
 
 
 // Registrar las menúes de navegación
@@ -536,7 +546,5 @@ function titulo_corto( $after = null, $length )
 	return $mytitle;
 }
 
-// Algo con respecto a las ssl seguro..
-// define( 'PILAU_REQUEST_PROTOCOL', isset( $_SERVER[ 'HTTPS' ] ) ? 'https' : 'http' );
 
 ?>
