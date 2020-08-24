@@ -143,22 +143,80 @@ function cambiar_opciones_mce($initArray)
 }
 add_filter('tiny_mce_before_init', 'cambiar_opciones_mce');
 
-
-// Deshabilitar Iconos Emoji
-/*
+// function remove_query_strings_split($src){
+// $output = preg_split("/(&ver|\?ver)/", $src);
+// return $output[0];
+// }
+// add_action('init', 'remove_query_strings');
+ 
+// Disable Gutenberg
+if (version_compare($GLOBALS['wp_version'], '5.0-beta', '>')) {
+// WP > 5 beta
+add_filter('use_block_editor_for_post_type', '__return_false', 10);
+} else {
+// WP < 5 beta
+add_filter('gutenberg_can_edit_post_type', '__return_false', 10);
+}
+add_filter( 'widget_text', 'do_shortcode' );
+ 
+//remove Gutenberg stylesheet
+function wp_dequeue_gutenberg_styles(){
+wp_dequeue_style( 'wp-block-library' );
+wp_dequeue_style( 'wp-block-library-theme' );
+}
+add_action( 'wp_print_styles', 'wp_dequeue_gutenberg_styles', 100 );
+ 
+//Remove Query Strings
+function remove_cssjs_ver( $src ) {
+if( strpos( $src, '?ver=' ) ) $src = remove_query_arg( 'ver', $src ); return $src;}
+add_filter( 'style_loader_src', 'remove_cssjs_ver', 10, 2 );
+add_filter( 'script_loader_src', 'remove_cssjs_ver', 10, 2 );
+ 
+//Remove RSD Links
+remove_action( 'wp_head', 'rsd_link' ) ;
+ 
+//Disable Emoticons
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
-add_filter( 'emoji_svg_url', '__return_false' );
-
-
-// Remover la API REST
-function remove_api ()
-{
-	remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
-	remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
-	remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
+ 
+//Remove Shortlink
+remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
+ 
+//Disable XML-RPC
+add_filter('xmlrpc_enabled', '__return_false');
+ 
+//Hide WordPress Version
+remove_action( 'wp_head', 'wp_generator' ) ;
+ 
+//Remove WLManifest Link
+remove_action( 'wp_head', 'wlwmanifest_link' ) ;
+ 
+//Disable Self Pingback
+function disable_pingback( &$links ) { foreach ( $links as $l => $link ) if ( 0 === strpos( $link, get_option( 'home' ) ) ) unset($links[$l]); }
+add_action( 'pre_ping', 'disable_pingback' );
+ 
+//Disable Heartbeat
+add_action( 'init', 'stop_heartbeat', 1 );
+function stop_heartbeat() {wp_deregister_script('heartbeat');}
+ 
+//Disable Dashicons on Front-end
+function wpdocs_dequeue_dashicon() {if (current_user_can( 'update_core' )) {return;} wp_deregister_style('dashicons');}
+add_action( 'wp_enqueue_scripts', 'wpdocs_dequeue_dashicon' );
+ 
+//Disable Contact Form 7 JS/CSS
+add_filter( 'wpcf7_load_css', '__return_false' );
+ 
+//Remove WordPress wp-embed js
+function my_deregister_scripts(){wp_deregister_script( 'wp-embed' );}
+add_action( 'wp_footer', 'my_deregister_scripts' );
+ 
+function filter_plugin_updates( $value ) {
+unset( $value->response['wp-responsive-menu/wp-responsive-menu.php'] );
+return $value;
 }
-add_action( 'after_setup_theme', 'remove_api' );
+add_filter( 'site_transient_update_plugins', 'filter_plugin_updates' );
 
 // Remover cosas raras de Wordpress
 remove_action( 'wp_head', 'wp_resource_hints', 2 );
@@ -170,14 +228,14 @@ function my_remove_rel_attr($content)
 	return preg_replace('/\s+rel="attachment wp-att-[0-9]+"/i', '', $content);
 }
 add_filter('the_content', 'my_remove_rel_attr');
-*/
+
 
 // Agregando un favicon al área de administración
-function admin_favicon()
+/* function admin_favicon()
 {
 	echo '<link rel="shortcut icon" type="image/x-icon" href="' . get_bloginfo('stylesheet_directory') . '/img/favicon.ico" />';
 }
-add_action('admin_head', 'admin_favicon', 1);
+add_action('admin_head', 'admin_favicon', 1); */
 
 
 /*

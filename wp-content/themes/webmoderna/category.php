@@ -23,7 +23,7 @@
 				<section class="entradas">
 					<header class="entradas__header">
 						<h1 class="entradas__header__title">
-							<?php _e('Categoría de Noticia: ', 'webmoderna');
+							<?php _e('Categoría: ', 'webmoderna');
 							echo '"' . single_cat_title( '', false ).'"';?>
 						</h1>
 					</header>
@@ -64,12 +64,19 @@
 								</div>
 
 								<!-- Las Etiquetas -->
-								<div class="categorizacion">
+								<!--<div class="categorizacion">
 									<div class="categorizacion__icono">
 										<span class="icon-price-tag icon-left icon-right"></span>
 									</div>
 									<div class="categorizacion__list">
-										<?php the_tags( '<ul class="categorizacion__list__items"><li>', '</li> <li>', '</li></ul>' );?>
+										<?php //the_tags( '<ul class="categorizacion__list__items"><li>', '</li> <li>', '</li></ul>' );?>
+									</div>
+								</div>-->
+
+								<!-- El resumen de la entrada -->
+								<div class="categorizacion">
+									<div class="categorizacion__resumen">
+										<?php the_excerpt();?>
 									</div>
 								</div>
 

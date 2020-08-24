@@ -160,26 +160,23 @@ $twitter_contact  = of_get_option('twitter_contact', '');
 <!--[if gt IE 9]><style type="text/css">.gradient { filter: none !important; }</style><![endif]-->
 <?php };?>
 
-	<link rel="preload" href="<?php bloginfo('stylesheet_directory');?>/css/style.css" as="style" onload="this.rel='stylesheet'" />
-	<noscript><link rel="stylesheet" href="<?php bloginfo('stylesheet_directory');?>/css/style.css" /></noscript>
+	<!-- <link rel="preload" href="<?php //bloginfo('stylesheet_directory');?>/css/style.css" as="style" onload="this.rel='stylesheet'" /> -->
+	<!-- <noscript><link rel="stylesheet" href="<?php //bloginfo('stylesheet_directory');?>/css/style.css" /></noscript> -->
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory');?>/css/style.css" />
 
 <?php
 	// Con esta librería se logran cargar los estilos en forma asincrónica
-	echo '<script type="text/javascript">';
-	require_once "js/loadcss.js";
-	echo '</script>';
+	/*echo '<script type="text/javascript">';
+	require_once bloginfo('stylesheet_directory')."/js/loadcss.js";
+	echo '</script>';*/
 ;?>
 
-	<script type="text/javascript" id="loadcss">
-	loadCSS( "<?php bloginfo('stylesheet_directory');?>/css/style.css", document.getElementById( "loadcss" ) );
-	</script>
+	<!-- <script type="text/javascript" id="loadcss">
+	loadCSS( "<?php //bloginfo('stylesheet_directory');?>/css/style.css", document.getElementById( "loadcss" ) );
+	</script> -->
 
 	<!-- Los favicones -->
 	<link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('stylesheet_directory');?>/img/favicon.ico" />
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php bloginfo('stylesheet_directory');?>/img/apple-touch-icon-144x144.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php bloginfo('stylesheet_directory');?>/img/apple-touch-icon-152x152.png" />
-	<link rel="icon" type="image/png" href="<?php bloginfo('stylesheet_directory');?>/img/favicon-32x32.png" sizes="32x32" />
-	<link rel="icon" type="image/png" href="<?php bloginfo('stylesheet_directory');?>/img/favicon-16x16.png" sizes="16x16" />
 	<?php wp_head();?>
 </head>
 <body>

@@ -17,8 +17,8 @@
 		&__figure
 			display table-cell
 			margin 0
-			max-width 50px
-			min-width 50px
+			max-width 100px
+			min-width 100px
 			overflow hidden
 			padding 0
 			vertical-align top
@@ -84,11 +84,15 @@
 				a
 					color gris_suave
 					display block
+					font-family fuente_heading_bold
+					font-weight bolder
 					padding 0.3em 50px 0.3em 0.25em
 					position relative
 					text-decoration none
+					text-transform uppercase
 					// transition_comun()
 
+					/*
 					&:after
 						content "+"
 						height 30px
@@ -101,14 +105,15 @@
 						top 50%
 						transition_comun()
 						width 30px
+						*/
 
 					&:hover
 					&:focus
-						background rosa_suave
-						color blanco
+						color rosa_suave
+						/*color blanco
 						
 						&:after
-							transform rotate(180deg)
+							transform rotate(180deg) */
 						
 
 		&__right
@@ -179,8 +184,8 @@
 	ul.categorizacion__list
 	ol.categorizacion__list
 		display table-cell
-		font-family fuente_heading_bold_italic
-		font-style italic
+		font-family fuente_heading_bold
+		//font-style italic
 		font-weight bolder
 		margin-left 0
 		padding-left 0.5em
@@ -201,7 +206,7 @@
 					border-radius 3px
 					color blanco
 					display inline-block
-					padding 1px 3px
+					padding 2px 6px
 					text-align center
 					text-decoration none
 					text-shadow_lindo()
